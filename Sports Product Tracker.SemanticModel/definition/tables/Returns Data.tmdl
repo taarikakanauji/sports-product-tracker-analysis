@@ -1,0 +1,55 @@
+table 'Returns Data'
+	lineageTag: 1ff460c3-77cf-46fc-a0a2-5e1a7d1eb8f3
+
+	column ReturnDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 49521a44-99de-4544-bde0-238564a7edeb
+		summarizeBy: none
+		sourceColumn: ReturnDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column TerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f5ce526-ae4d-4bde-bb88-a8107dbd52f8
+		summarizeBy: none
+		sourceColumn: TerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 761aa67a-6919-4cb2-ac8b-4217356a7451
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReturnQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 48f53485-a076-4cfc-8597-b65c7182c9ec
+		summarizeBy: sum
+		sourceColumn: ReturnQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Returns Data' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("E:\PORTFOLIO\POWER BI\Sports Product Tracker\dataset\AdventureWorks Returns Data.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReturnDate", type date}, {"TerritoryKey", Int64.Type}, {"ProductKey", Int64.Type}, {"ReturnQuantity", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

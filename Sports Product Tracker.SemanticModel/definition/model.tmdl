@@ -1,0 +1,43 @@
+model Model
+	culture: en-CA
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-CA
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Transform File from Sales Data'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from Sales Data\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.141.1754.0 (25.03)+e4409ed908ce97a5e9747f7dc48da475cf1c71a2
+
+annotation PBI_QueryOrder = ["Calendar Lookup","Customer Lookup","Product Categories Lookup","Product Lookup","Product Subcategories Lookup","Returns Data","Territory Lookup","Sales Data","Sample File","Parameter1","Transform Sample File","Transform File","Measure"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Calendar Lookup'
+ref table 'Customer Lookup'
+ref table 'Product Categories Lookup'
+ref table 'Product Lookup'
+ref table 'Product Subcategories Lookup'
+ref table 'Returns Data'
+ref table 'Territory Lookup'
+ref table 'Sales Data'
+ref table Measure
+ref table 'Price Adjustment (%)'
+ref table 'Product Metric Selection'
+ref table 'Customer selection Metric'
+
+ref role Europe
+ref role 'North America'
+ref role Pacific
+
+ref cultureInfo en-CA
+

@@ -1,0 +1,110 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU10",
+      "reportVersionAtImport": "5.62",
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Custom5933550033094181.json",
+      "reportVersionAtImport": "5.62",
+      "type": "RegisteredResources"
+    }
+  },
+  "layoutOptimization": "None",
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU10",
+          "path": "BaseThemes/CY24SU10.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Custom5933550033094181.json",
+          "path": "Custom5933550033094181.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "Filter_Icon37390158158671105.png",
+          "path": "Filter_Icon37390158158671105.png",
+          "type": "Image"
+        },
+        {
+          "name": "RESET5276755315215438.png",
+          "path": "RESET5276755315215438.png",
+          "type": "Image"
+        },
+        {
+          "name": "Dashboard_Icon22913908746153977.png",
+          "path": "Dashboard_Icon22913908746153977.png",
+          "type": "Image"
+        },
+        {
+          "name": "Product_Icon9903830753307051.png",
+          "path": "Product_Icon9903830753307051.png",
+          "type": "Image"
+        },
+        {
+          "name": "Customer_Icon91683860254246.png",
+          "path": "Customer_Icon91683860254246.png",
+          "type": "Image"
+        },
+        {
+          "name": "close_icon6370775192274589.png",
+          "path": "close_icon6370775192274589.png",
+          "type": "Image"
+        },
+        {
+          "name": "Map_Icon4955473718986325.png",
+          "path": "Map_Icon4955473718986325.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

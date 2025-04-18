@@ -1,0 +1,97 @@
+table 'Sales Data'
+	lineageTag: c7ecaa5b-dcf7-418f-9a00-d048cdafee82
+
+	column OrderDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5f6ec50a-087e-490e-b096-d997722920a1
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column StockDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c8142f11-0aa2-4aae-8244-292c5d7b8afe
+		summarizeBy: none
+		sourceColumn: StockDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column OrderNumber
+		dataType: string
+		lineageTag: 9abcdccc-f47e-4728-91b7-a0b0862dcdd8
+		summarizeBy: none
+		sourceColumn: OrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: fda8b91a-5918-45af-bce4-3512ad96e6a9
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 649be654-e105-42aa-9036-c553d9767896
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 610d0d8a-8603-403e-8f3b-8042e1a6d237
+		summarizeBy: none
+		sourceColumn: TerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderLineItem
+		dataType: int64
+		formatString: 0
+		lineageTag: a42cdabc-2fec-4228-bf6b-c8417552f126
+		summarizeBy: sum
+		sourceColumn: OrderLineItem
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: c4b18023-aa4b-4ca5-a1e1-4e3b120f9f91
+		summarizeBy: sum
+		sourceColumn: OrderQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Data' = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("E:\PORTFOLIO\POWER BI\Sports Product Tracker\dataset\Sales Data"),
+				    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+				    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File"}),
+				    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File", Table.ColumnNames(#"Transform File"(#"Sample File"))),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Table Column1",{{"Source.Name", type text}, {"OrderDate", type date}, {"StockDate", type date}, {"OrderNumber", type text}, {"ProductKey", Int64.Type}, {"CustomerKey", Int64.Type}, {"TerritoryKey", Int64.Type}, {"OrderLineItem", Int64.Type}, {"OrderQuantity", Int64.Type}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Source.Name"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
