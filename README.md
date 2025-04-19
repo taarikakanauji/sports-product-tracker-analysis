@@ -146,7 +146,7 @@ Below is my step-by-step approach to designing this dashboard in Power BI:
 
    The chart reveals that Accessories are the top-performing category, with 17.0K orders, making it the most in-demand product line. Following closely is the Bikes category, generating 13.9K orders, suggesting consistent interest but slightly lower traction than Accessories.
 
-   On the other hand, Clothing saw significantly fewer orders at 7.0K, which is less than half the volume of Accessories. This indicates a potential area for improvement or reevaluation in terms of inventory, marketing strategy, or product offerings.
+   On the other hand, Clothing saw significantly fewer orders at 7.0K, which is less than half the volume of Accessories. This indicates a potential area for improvement or re-evaluation in terms of inventory, marketing strategy, or product offerings.
 
  ![Order by Category](https://github.com/taarikakanauji/sports-product-tracker-analysis/raw/main/images/order-category-H.jpg)
 
@@ -212,11 +212,11 @@ By analyzing these trends, stakeholders can better understand which customers ar
 
 The **KPI Metrics** section provides a quick snapshot of the numbers related to customers and revenues. These include `Total Customer` and `Revenue per Customer`
 
-The **Orders by Income Level** graph displays the overall distribution of number of orders based on the various income levels, This offers a high-level overview of affordability and popularity of the products across varios income levels. Based on this data, future product decisions can be made to target selective customers with the right kind of product.
+The **Orders by Income Level** graph displays the overall distribution of number of orders based on the various income levels, This offers a high-level overview of affordability and popularity of the products across various income levels. Based on this data, future product decisions can be made to target selective customers with the right kind of product.
 
 The **Orders by Occupation** section presents a distribution of number of orders based on the customer occupation. This can help in identifying a strong focus area for which new products can be made to target the respective customers.
 
-The **Customers Orders and Revenue** table shows us our customers and how much revenue they are bringing to our brand. The number of orders per customer are also a highlight in this table. Combining everything, this can reveal some interesting patterns about customer purchasing preferences, average no. of orders, monthly and/or yearly revenues and many more. This gives a deep down view of customers's purchasing choices.
+The **Customers Orders and Revenue** table shows us our customers and how much revenue they are bringing to our brand. The number of orders per customer are also a highlight in this table. Combining everything, this can reveal some interesting patterns about customer purchasing preferences, average no. of orders, monthly and/or yearly revenues and many more. This gives a deep down view of customers purchasing choices.
 
 Another small, yet key section is the **Outstanding Markers**, which includes the top and/or the highest indicators in three categories namely: `Top Customer`, `Largest Order`, and `Highest Revenue`.
 
