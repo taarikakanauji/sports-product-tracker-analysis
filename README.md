@@ -257,9 +257,6 @@ Additionally, the **Top Performer Product** section highlights the best-performi
 ### **Power BI Service Demo**  
 [Power BI Service Demo (MKV)](https://github.com/taarikakanauji/sports-product-tracker-analysis/blob/main/Power-Service-Demo.mkv)  
 
-### **Dataset Folder**  
-[Dataset Files](https://github.com/taarikakanauji/sports-product-tracker-analysis/tree/main/dataset)  
-
 ### **PBIP Files**  
 - **Report:** [Report Files](https://github.com/taarikakanauji/sports-product-tracker-analysis/tree/main/Sports%20Product%20Tracker.Report)  
 - **Semantic Model:** [Semantic Model Files](https://github.com/taarikakanauji/sports-product-tracker-analysis/tree/main/Sports%20Product%20Tracker.SemanticModel)  
